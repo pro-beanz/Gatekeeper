@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gatekeeper", "Gatekeeper\Gatekeeper.csproj", "{F547F1E0-3F9D-4EA3-B961-45811AF606C8}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E53B4408-D9CF-413C-A767-DF9CF6FF3CE1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99B93247-4208-4DB9-AA36-70FED65A08F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99B93247-4208-4DB9-AA36-70FED65A08F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99B93247-4208-4DB9-AA36-70FED65A08F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99B93247-4208-4DB9-AA36-70FED65A08F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F547F1E0-3F9D-4EA3-B961-45811AF606C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F547F1E0-3F9D-4EA3-B961-45811AF606C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F547F1E0-3F9D-4EA3-B961-45811AF606C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F547F1E0-3F9D-4EA3-B961-45811AF606C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53B4408-D9CF-413C-A767-DF9CF6FF3CE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53B4408-D9CF-413C-A767-DF9CF6FF3CE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53B4408-D9CF-413C-A767-DF9CF6FF3CE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53B4408-D9CF-413C-A767-DF9CF6FF3CE1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {086CAE58-CB86-4A48-978C-182CB25F3F31}
+	EndGlobalSection
+EndGlobal

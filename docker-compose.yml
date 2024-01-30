@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: gatekeeper
+      POSTGRES_PASSWORD: password
+    volumes:
+    - pgdata:/var/lib/postgreqsqldata
+
+  gatekeeper:
+    container_name: gatekeeper
+    image: ${DOCKER_REGISTRY-}gatekeeperdata
+    build:
+      context: .
+      dockerfile: Gatekeeper.Data/Dockerfile
+    environment:
+      DB_CONN_STR: User ID=gatekeeper;Password=password;Host=db;Port=5432;Database=gatekeeper
+
+volumes:
+  pgdata:
