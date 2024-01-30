@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Gatekeeper.Data.DataConfigurations
+namespace Gatekeeper.DataConfigurations
 {
     internal class Member : IEntityTypeConfiguration<Models.Member>
     {
