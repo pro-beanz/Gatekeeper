@@ -4,3 +4,10 @@ services:
   gatekeeper:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+  
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
