@@ -17,9 +17,9 @@ namespace Gatekeeper.Services
             await _db.AuthCodes.FindAsync(discordId);
 
         public async Task<List<AuthCode>> GetExpiredAuthCodesAsync() =>
-            await _db.AuthCodes
+            (await _db.AuthCodes.ToListAsync())
                 .Where(x => !Helper.YoungerThan(x.Created, AuthService.VALID_TIME))
-                .ToListAsync();
+                .ToList();
         
         public async Task SaveAuthCodeAsync(AuthCode authCode)
         {
