@@ -9,7 +9,7 @@ services:
       POSTGRES_USER: gatekeeper
       POSTGRES_PASSWORD: password
     volumes:
-    - pgdata:/var/lib/postgresqldata
+      - pgdata:/var/lib/postgresqldata
 
   gatekeeper:
     container_name: gatekeeper
