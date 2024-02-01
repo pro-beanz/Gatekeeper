@@ -6,14 +6,12 @@ namespace Gatekeeper.Services
     public class GuildAffiliationService
     {
         private readonly RepositoryService _repo;
-        private readonly MemberService _member;
 
         public static readonly TimeSpan VALID_LEAVE_TIMEOUT = TimeSpan.FromDays(2);
 
-        public GuildAffiliationService(RepositoryService repositoryService, MemberService memberService)
+        public GuildAffiliationService(RepositoryService repositoryService)
         {
             _repo = repositoryService;
-            _member = memberService;
         }
 
         public async Task AddGuildAffiliation(long discordId, long guildId) =>
@@ -27,9 +25,8 @@ namespace Gatekeeper.Services
 
         }
 
-        public async Task<bool> JoinGuild(long discordId, long guildId)
+        public async Task JoinGuild(long discordId, long guildId)
         {
-            if (!await _member.ExistsAsync(discordId)) return false;
             var affiliation = await _repo.GetGuildAffiliationAsync(discordId, guildId);
             if (affiliation == null)
                 await AddGuildAffiliation(discordId, guildId);
@@ -39,12 +36,10 @@ namespace Gatekeeper.Services
                 affiliation.LeaveTime = null;
                 await _repo.UpdateGuildAffiliation(affiliation);
             }
-            return true;
         }
 
         public async Task LeaveGuild(long discordId, long guildId)
         {
-            if (!await _member.ExistsAsync(discordId)) return;
             var affiliation = await _repo.GetGuildAffiliationAsync(discordId, guildId);
             affiliation!.LeaveTime = DateTimeOffset.Now;
             await _repo.UpdateGuildAffiliation(affiliation);
