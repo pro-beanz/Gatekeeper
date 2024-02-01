@@ -3,7 +3,8 @@ version: '3.4'
 services:
   gatekeeper:
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      ASPNETCORE_ENVIRONMENT: Development
+      DISCORD_SECRET: test
   
   adminer:
     container_name: adminer
@@ -11,3 +12,5 @@ services:
     restart: always
     ports:
       - 8080:8080
+    depends_on:
+      - db

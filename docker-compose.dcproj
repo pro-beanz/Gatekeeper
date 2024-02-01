@@ -5,7 +5,7 @@
     <DockerTargetOS>Linux</DockerTargetOS>
     <ProjectGuid>e53b4408-d9cf-413c-a767-df9cf6ff3ce1</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
-    <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/gatekeeper</DockerServiceUrl>
+    <DockerServiceUrl>http://localhost:8080</DockerServiceUrl>
     <DockerServiceName>gatekeeper.data</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>

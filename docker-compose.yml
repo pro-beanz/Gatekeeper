@@ -19,6 +19,9 @@ services:
       dockerfile: Gatekeeper/Dockerfile
     environment:
       DB_CONN_STR: User ID=gatekeeper;Password=password;Host=db;Port=5432;Database=gatekeeper
+      DISCORD_SECRET: 
+    depends_on:
+      - db
 
 volumes:
   pgdata:

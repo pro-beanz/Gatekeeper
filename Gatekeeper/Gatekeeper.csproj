@@ -13,8 +13,6 @@
     <PackageReference Include="Discord.Net.Interactions" Version="3.13.0" />
     <PackageReference Include="Discord.Net.Rest" Version="3.13.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.26" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.22" />
   </ItemGroup>
 
