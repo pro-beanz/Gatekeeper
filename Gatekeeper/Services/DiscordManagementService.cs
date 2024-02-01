@@ -1,4 +1,5 @@
 ﻿using Discord;
+using Discord.Net;
 using Discord.WebSocket;
 
 namespace Gatekeeper.Services
@@ -19,8 +20,17 @@ namespace Gatekeeper.Services
             // and https://github.com/Aux/Discord.Net-Example/blob/3.10/src/Utility/LogHelper.cs
             _client.Log += msg =>
             {
-                _logger.Log((LogLevel)(Math.Abs(((int)msg.Severity) - 5)), msg.Message);
+                _logger.Log((LogLevel)(Math.Abs(((int)msg.Severity) - 5)), msg.ToString());
                 return Task.CompletedTask;
+            };
+
+            _client.Disconnected += async ex =>
+            {
+                if (ex.GetType().Equals(typeof(HttpException)))
+                {
+                    _logger.LogCritical("Invalid Discord application token! Set the DISCORD_SECRET environment variable.");
+                    await _client.StopAsync();
+                }
             };
         }
 
